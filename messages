@@ -1,0 +1,14 @@
+*&---------------------------------------------------------------------*
+*& Report z_messages
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_messages.
+
+
+MESSAGE 'Success message for user' TYPE 'S'.
+MESSAGE 'Information message as a test' TYPE 'I'.
+MESSAGE 'Warning message for user' TYPE 'W'.
+MESSAGE 'Something went wrong' TYPE 'E'.
+MESSAGE 'Abort message should works' TYPE 'X'.
+MESSAGE 'There is an termination message' TYPE 'A'.
