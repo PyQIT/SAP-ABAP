@@ -1,0 +1,29 @@
+*&---------------------------------------------------------------------*
+*& Report z_variables
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_variables.
+
+DATA myFirstVariable TYPE C.
+DATA myVariable LIKE myFirstVariable.
+DATA signedVariable TYPE I VALUE 34.
+
+PARAMETERS: NAME(20) TYPE C,
+            SURNAME(50) TYPE C,
+            AGE TYPE I,
+            AMOUNT TYPE P DECIMALS 2.
+
+CLASS myClass DEFINITION.
+PUBLIC SECTION.
+DATA myValue TYPE I VALUE 4.
+ENDCLASS.
+
+DATA: Oref TYPE REF TO myClass,
+      Dref LIKE REF TO Oref,
+      Dref2 TYPE REF TO I.
+
+CREATE OBJECT Oref.
+GET REFERENCE OF Oref INTO Dref.
+CREATE DATA Dref2.
+Dref2->* = Dref->*->myValue.
