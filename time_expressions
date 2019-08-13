@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report z_time_expressions
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_time_expressions.
+
+DATA: date TYPE D,
+      stamp TYPE TIMESTAMP.
+
+date = SY-DATUM.
+WRITE: / 'Present date is:', date DD/MM/YYYY.
+date = date + 06.
+WRITE: / 'Date after 6 days is:', date DD/MM/YY.
+
+GET TIME STAMP FIELD stamp.
+WRITE: / 'The stamp date without miliseconds:', stamp.
