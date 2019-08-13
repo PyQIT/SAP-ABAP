@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report z_constants
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_constants.
+
+CONSTANTS hello TYPE string VALUE 'Test stalej zmiennej'.
+
+*&Hello = 'Zmieniona wartosc'.
+
+WRITE hello.
+
+CONSTANTS: BEGIN OF house,
+           adress(20) TYPE c VALUE 'Adress',
+           owner9 TYPE string VALUE 'Owner',
+           END OF house.
