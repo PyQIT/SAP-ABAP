@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report z_formatting_data
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_formatting_data.
+
+DATA: variable(20) TYPE C VALUE 'Hello',
+      variable_2(20) TYPE C VALUE 'World'.
+
+WRITE: variable, variable_2.
+WRITE: / variable_2 UNDER variable.
+WRITE: / variable NO-GAP, variable_2.
+
+DATA time TYPE T VALUE '094854'.
+WRITE: / time,
+/(8) time Using EDIT MASK '__:__:__'.
