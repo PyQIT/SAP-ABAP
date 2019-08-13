@@ -1,0 +1,31 @@
+*&---------------------------------------------------------------------*
+*& Report ZVARIABLETEST
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZVARIABLETEST.
+
+Data: a type i,
+      e type i,
+      f type i,
+      b type decfloat34,
+      c type String.
+
+a = 3.
+f = 4.
+e = a + f.
+b = '214.6'.
+b = b + '1.2'.
+c = 'Hello ABAP'.
+
+WRITE: 'Wartości zmiennych:', /.
+WRITE: ' Zmienna a', '  Zmienna f', '  Zmienna e', '  Zmienna c', '  Zmienna b',/.
+WRITE: a, f, e, c, b.
+ULINE.
+WRITE: 'Linia 24', /.
+WRITE: 'Linia 25'.
+ULINE.
+SKIP: 2.
+ULINE.
+WRITE: 'Linia 29', /.
+WRITE: 'Linia 30'.
