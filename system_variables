@@ -1,0 +1,19 @@
+*&---------------------------------------------------------------------*
+*& Report z_systemvariables
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_systemvariables.
+
+WRITE: /'SY-ABCDE', SY-ABCDE,
+       /'SY-DATUM', SY-DATUM,
+       /'SY-DBSYS', SY-DBSYS,
+       /'SY-HOST', SY-HOST,
+       /'SY-LANGU', SY-LANGU,
+       /'SY-MANDT', SY-MANDT,
+       /'SY-OPSYS', SY-OPSYS,
+       /'SY-SAPRL', SY-SAPRL,
+       /'SY-SYSID', SY-SYSID,
+       /'SY-TCODE', SY-TCODE,
+       /'SY-UNAME', SY-UNAME,
+       /'SY-UZEIT', SY-UZEIT.
