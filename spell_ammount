@@ -1,0 +1,21 @@
+*&---------------------------------------------------------------------*
+*& Report Z_SPELLAMOUNT
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT Z_SPELLAMOUNT.
+DATA: RESULT LIKE SPELL.
+SELECTION-SCREEN BEGIN OF LINE.
+SELECTION-SCREEN COMMENT 1(15) TEXT-001.
+PARAMETERS NUM_1 TYPE I.
+SELECTION-SCREEN END OF LINE.
+CALL FUNCTION 'SPELL_AMOUNT'
+EXPORTING
+AMOUNT = NUM_1
+IMPORTING
+IN_WORDS = RESULT.
+IF SY-SUBRC <> 0.
+WRITE: 'VALUE RETURNED IS:', SY-SUBRC.
+ELSE.
+WRITE: 'AMOUNT IN WORDS IS:', RESULT-WORD.
+ENDIF.
