@@ -1,0 +1,32 @@
+*&---------------------------------------------------------------------*
+*& Report z_raise
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_raise.
+
+PARAMETERS NUM_1 TYPE I.
+DATA: RES_1 TYPE P DECIMALS 2,
+      ORF_1 TYPE REF TO CX_ROOT,
+      TXT_1 TYPE STRING.
+
+START-OF-SELECTION.
+
+WRITE: / 'Square Root and Division with:', NUM_1, /.
+TRY.
+IF ABS( NUM_1 ) > 150.
+RAISE EXCEPTION TYPE CX_DEMO_ABS_TOO_LARGE.
+ENDIF.
+
+TRY.
+RES_1 = SQRT( NUM_1 ).
+WRITE: / 'Result of square root:', RES_1.
+RES_1 = 1 / NUM_1.
+WRITE: / 'Result of division', RES_1.
+CATCH CX_SY_ZERODIVIDE INTO ORF_1.
+TXT_1 = ORF_1->GET_TEXT( ).
+WRITE: / TXT_1.
+CLEANUP.
+CLEAR RES_1.
+ENDTRY.
+ENDTRY.
