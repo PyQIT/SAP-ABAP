@@ -1,0 +1,21 @@
+*&---------------------------------------------------------------------*
+*& Report z_strings
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_strings.
+
+DATA: variable(30) VALUE 'Programming',
+      variable_1(20) VALUE 'Hello',
+      length TYPE I,
+      sep,
+      destination(30),
+      destination2(30).
+
+length = STRLEN( variable ).
+WRITE: / 'The length of variable:', length.
+
+CONCATENATE variable variable_1 INTO destination.
+WRITE: / 'Concatenation:', destination.
+CONCATENATE variable variable_1 INTO destination2 SEPARATED BY sep.
+WRITE: / 'Concatenation with space:', destination2.
