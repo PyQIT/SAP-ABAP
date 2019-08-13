@@ -1,0 +1,39 @@
+*&---------------------------------------------------------------------*
+*& Report z_comparisions_without_bug
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_comparisions.
+
+DATA: a TYPE i VALUE 100,
+      b TYPE DECFLOAT16 VALUE '20.23',
+      p(10) TYPE C VALUE 'CAR',
+      q(10) TYPE C VALUE 'CUCUMBER'.
+
+      IF a LT b.
+      WRITE: / 'Prawda'.
+      ELSE.
+      WRITE: / 'Falsz'.
+      ENDIF.
+
+      IF a GT b.
+      WRITE: / 'Prawda'.
+      ELSE.
+      WRITE: / 'Falsz'.
+      ENDIF.
+
+      IF a GE b.
+      WRITE: / 'Prawda'.
+      ELSE.
+      WRITE: / 'Falsz'.
+      ENDIF.
+
+      IF a LE b.
+      WRITE: / 'Prawda'.
+      ELSE.
+      WRITE: / 'Falsz'.
+      ENDIF.
+
+      IF p CA q.
+      WRITE: / 'P contains at least one character of Q'.
+      ENDIF.
