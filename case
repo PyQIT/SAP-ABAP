@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report z_case
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_case.
+
+DATA variable TYPE string VALUE 'Hello'.
+
+CASE variable.
+    WHEN 'Test'.
+        WRITE 'Error'.
+    WHEN 'Tutorial'.
+        WRITE 'Error_2'.
+    WHEN 'Hello'.
+        WRITE 'Test passed'.
+ENDCASE.
