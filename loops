@@ -1,0 +1,47 @@
+*&---------------------------------------------------------------------*
+*& Report z_loops
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_loops.
+
+DATA: variable TYPE i,
+      do_variable TYPE i.
+
+variable = 0.
+do_variable = 0.
+
+WRITE 'While loop'.
+WHILE variable <> 10.
+
+variable = variable + 1.
+
+WRITE: / 'Itaration number:', variable.
+
+ENDWHILE.
+
+WRITE: / 'Do loop'.
+
+DO 10 TIMES.
+do_variable = do_variable + 1.
+WRITE: / 'Iteration number:', do_variable.
+ENDDO.
+
+do_variable = 0.
+
+WRITE: / 'Nested loop'.
+
+DO 5 TIMES.
+variable = 0.
+do_variable = do_variable + 1.
+WRITE: / 'OUTER LOOP:', do_variable.
+    Do 10 TIMES.
+    variable = variable + 1.
+    WRITE: / 'INNER LOOP:', variable.
+    ENDDO.
+ENDDO.
+
+DO 5 TIMES.
+CHECK SY-INDEX BETWEEN 3 AND 4.
+WRITE / SY-INDEX.
+ENDDO.
