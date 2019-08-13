@@ -1,0 +1,21 @@
+*&---------------------------------------------------------------------*
+*& Report z_exceptions
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_exceptions.
+
+DATA: result TYPE P LENGTH 8 DECIMALS 2,
+exref TYPE REF TO CX_ROOT,
+msgtxt TYPE STRING.
+PARAMETERS: Num1 TYPE I, Num2 TYPE I.
+TRY.
+    result = Num1 / Num2.
+    WRITE: / result.
+    CATCH CX_SY_ZERODIVIDE INTO exref.
+    msgtxt = exref->GET_TEXT( ).
+    WRITE: / msgtxt.
+    CATCH CX_SY_CONVERSION_NO_NUMBER INTO exref.
+    msgtxt = exref->GET_TEXT( ).
+    WRITE: / msgtxt.
+ENDTRY.
