@@ -1,0 +1,25 @@
+*&---------------------------------------------------------------------*
+*& Report ZMACRO_TEST
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT ZMACRO_TEST.
+
+DEFINE MAC_TEST.
+WRITE: 'This is macro &1'.
+END-OF-DEFINITION.
+
+PARAMETERS: S1 TYPE C AS CHECKBOX,
+            S2 TYPE C AS CHECKBOX,
+            S3 TYPE C AS CHECKBOX DEFAULT 'X'.
+
+START-OF-SELECTION.
+IF S1 = 'X'.
+  MAC_TEST 1.
+ENDIF.
+IF S2 = 'X'.
+  MAC_TEST 2.
+ENDIF.
+IF S3 = 'X'.
+  MAC_TEST 3.
+ENDIF.
