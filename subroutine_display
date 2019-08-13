@@ -1,0 +1,11 @@
+*&---------------------------------------------------------------------*
+*& Report z_subroutine_display
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT z_subroutine_display.
+
+FORM Subroutine_Test.
+WRITE: / 'Called function from Subroutine Test'.
+WRITE: / 'Subroutine created successfully'.
+ENDFORM.
